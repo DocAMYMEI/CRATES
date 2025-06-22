@@ -128,18 +128,6 @@ jupyter lab CAR_main.ipynb
 We do **not** ship data nor auto‑fetch from public APIs.  Obtain prices from your licensed market data terminal (e.g. Bloomberg, Wind, Refinitiv) and ensure the schema matches the examples below before running any analysis.
 bash
 
-# clone + env
-
-git clone [https://github.com/DocAMYMEI/maest.git](https://github.com/DocAMYMEI/maest.git)
-cd maest && python -m venv .venv && source .venv/bin/activate
-
-# install deps
-
-pip install -r requirements.txt
-
-# run master notebook
-
-jupyter lab CAR\_main.ipynb
 
 ````
 
@@ -184,7 +172,7 @@ Screenshots live in `sample/`.
   title  = {{CRATES}: Crypto & Cross-Asset Event Study Toolkit},
   year   = {2025},
   url    = {https://github.com/DocAMYMEI/crates},
-  note   = {Version 1.0.0}
+  note   = {Version 4.5.0}
 }
 ````
 
@@ -205,7 +193,7 @@ Market data remains property of original providers.
 | **Fuzzy & RDD‑IV**  | Extend RD module to fuzzy boundaries and instrumental‑variable designs | Unlocks causal inference when treatment assignment is imperfect |
 | **Robust Variance** | Add heteroskedasticity‑consistent variance estimators (HC0‑HC3)        | Reliable t‑stats when residuals aren’t i.i.d.                   |
 | **Docker & Binder** | Provide reproducible container + one‑click cloud demo                  | Lowers onboarding friction for non‑Python users                 |
-| **CLI Wrapper**     | Headless batch execution via `caesar run --config events.yaml`         | Integrates into CI/CD or cron jobs                              |
+| **CLI Wrapper**     | Headless batch execution via `crates run --config events.yaml`         | Integrates into CI/CD or cron jobs                              |
 | **White‑paper**     | Submit methodological white‑paper to arXiv                             | Academic transparency & citability                              |
 
 ---
