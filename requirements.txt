@@ -1,0 +1,19 @@
+# Data Processing and Scientific Computing
+pandas
+numpy
+scipy
+statsmodels
+
+# Data Visualization
+matplotlib
+seaborn
+plotly
+
+# Specific Charting Libraries
+waterfallcharts
+
+# Excel File Export
+XlsxWriter
+
+# Jupyter Environment
+jupyterlab
