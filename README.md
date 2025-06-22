@@ -128,11 +128,6 @@ jupyter lab CAR_main.ipynb
 We do **not** ship data nor auto‑fetch from public APIs.  Obtain prices from your licensed market data terminal (e.g. Bloomberg, Wind, Refinitiv) and ensure the schema matches the examples below before running any analysis.
 bash
 
-
-````
-
-.
-
 ---
 
 ## 🧪 Methodology Snapshot
@@ -172,7 +167,7 @@ Screenshots live in `sample/`.
   title  = {{CRATES}: Crypto & Cross-Asset Event Study Toolkit},
   year   = {2025},
   url    = {https://github.com/DocAMYMEI/crates},
-  note   = {Version 4.5.0}
+  note   = {Version 6.5.17}
 }
 ````
 
