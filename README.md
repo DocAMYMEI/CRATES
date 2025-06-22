@@ -56,62 +56,62 @@ crates/
 **Goal:** Provide a birds-eye view of which assets and event groups matter most.
 
 <div align="center">
-  <img src="sample/sampleV1_Event_Impact_Overview.png"   alt="Event Impact Overview"  width="720"/>
+  <img src="sample/sampleV1%EF%BC%9AEvent%20Impact%20Overview%20for%20All%20Windows.png"   alt="Event Impact Overview"  width="720"/>
   <br/>
-  <img src="sample/sampleV2.1_Significance_Heatmap_-1+1.png"  alt="Heat-map (-1,+1)"  width="320"/>
-  <img src="sample/sampleV2.2_Significance_Heatmap_-5+5.png"  alt="Heat-map (-5,+5)"  width="320"/>
-  <img src="sample/sampleV2.3_Significance_Heatmap_-10+10.png" alt="Heat-map (-10,+10)" width="320"/>
+  <img src="sample/sampleV2.1%EF%BC%9ASignificance%20Heatmaps%20for%20All%20Windows.png"  alt="Heat-map (-1,+1)"  width="320"/>
+  <img src="sample/sampleV2.2%EF%BC%9ASignificance%20Heatmaps%20for%20All%20Windows.png"  alt="Heat-map (-5,+5)"  width="320"/>
+  <img src="sample/sampleV2.3%EF%BC%9ASignificance%20Heatmaps%20for%20All%20Windows.png"  alt="Heat-map (-10,+10)" width="320"/>
 </div>
 
 ---
 
 <!-- Category 2 ------------------------------------------------------------ -->
 ### Category 2 · Distribution & Risk Analysis  
-**Goal:** Look beyond the mean—understand full CAR distributions and risk asymmetry.
+**Goal:** Understand full CAR distribution and risk asymmetry.
 
 <div align="center">
-  <img src="sample/sampleV3_CAR_Distribution.png" alt="CAR Distribution (Violin/Box)" width="720"/>
+  <img src="sample/sampleV3%EF%BC%9ACAR%20Distribution%20across%20All%20Windows.png"  alt="CAR Distribution" width="720"/>
   <br/>
-  <img src="sample/sampleV4_CDF_Plot.png"          alt="CAR CDF Comparison"           width="450"/>
+  <img src="sample/sampleV4%EF%BC%9ACumulative%20Distribution%20Function%20%28CDF%29%20Plot.png" alt="CAR CDF" width="450"/>
 </div>
 
 ---
 
 <!-- Category 3 ------------------------------------------------------------ -->
 ### Category 3 · Temporal Dynamics Analysis  
-**Goal:** Reveal when the market reacts, how long it lasts, and which days drive final CAR.
+**Goal:** Show how impact evolves over time and which days drive final CAR.
 
 <div align="center">
-  <img src="sample/sampleV5_Mean_CAR_Timeliness.png" alt="Timeliness Point Plot" width="720"/>
+  <img src="sample/sampleV5%EF%BC%9AMean%20CAR%20Timeliness%20Analysis%20%28Point%20Plot%29.png" alt="Timeliness Analysis" width="720"/>
   <br/>
-  <img src="sample/sampleV7_Daily_CAR_Trend.png"     alt="Daily CAR Trend"      width="350"/>
-  <img src="sample/sampleV8_Waterfall.png"           alt="CAR Waterfall"        width="350"/>
+  <img src="sample/sampleV7%EF%BC%9ADaily%20Cumulative%20Abnormal%20Return%20%28CAR%29%20Trend.png" alt="Daily CAR Trend" width="350"/>
+  <img src="sample/sampleV8%EF%BC%9ACAR%20Contribution%20Waterfall%20Chart.png"             alt="CAR Waterfall"     width="350"/>
 </div>
 
 ---
 
 <!-- Category 4 ------------------------------------------------------------ -->
 ### Category 4 · Model Robustness & Diagnostics  
-**Goal:** Check whether findings survive model choices and whether factor models fit the data.
+**Goal:** Verify findings across factor models and check model fit.
 
 <div align="center">
-  <img src="sample/sampleV6_Model_Robustness_Check.png" alt="Model Robustness Check" width="350"/>
-  <img src="sample/sampleV9_Model_Fit_Diagnostic.png"   alt="Model Fit Diagnostic"  width="350"/>
+  <img src="sample/sampleV6%EF%BC%9AModel%20Robustness%20Check%20%28Grouped%20Bar%20Chart%29.png"  alt="Model Robustness"  width="350"/>
+  <img src="sample/sampleV9%EF%BC%9AModel%20Fit%20Diagnostic%20%28Scatter%20Plot%29.png"            alt="Model Fit Diagnostic" width="350"/>
 </div>
 
 ---
 
 <!-- Category 5 ------------------------------------------------------------ -->
 ### Category 5 · Advanced Techniques & Presentation  
-**Goal:** High-density layouts and statistical annotation for professional reporting.
+**Goal:** High-density layouts and statistical annotation for pro reports.
 
 <div align="center">
-  <img src="sample/sampleVA1_Facet_Grid.png"               alt="Facet Grid"           width="720"/>
+  <img src="sample/sampleVA1%EF%BC%9AAdvanced%20Facet%20Grid.png"               alt="Facet Grid"        width="720"/>
   <br/>
-  <img src="sample/sampleVA2_Significance_Annotated_Bar.png" alt="Annotated Bar Chart" width="450"/>
+  <img src="sample/sampleVA2%EF%BC%9ASignificance%20Annotation%20on%20a%20Bar%20Chart%20%28Corrected%29.png" alt="Annotated Bar" width="450"/>
 </div>
 
-> *All figures are generated automatically by CRATES notebooks (V1–V9, VA1–VA2).*
+> *All figures are produced automatically by CRATES notebooks (V1 – V9, VA1 – VA2).*
 
 ### 📦 Data Folders Explained
 
