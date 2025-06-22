@@ -1,27 +1,31 @@
-CRATES — Crypto & Cross‑Asset Event Study Toolkit — Cross‑Asset Event Study Analysis Repository
+# CRATES — Crypto & Cross‑Asset Event Study Toolkit — Cross‑Asset Event Study Analysis Repository
 
-CRATES is an end‑to‑end, research‑grade event‑study laboratory for cross‑asset markets.It couples Cumulative Abnormal Return (CAR) pipelines with batched Regression Discontinuity (RD) analysis and ships a full notebook gallery for high‑impact visual communication.
+**CRATES** is an end‑to‑end, research‑grade **event‑study laboratory** for cross‑asset markets.
+It couples *Cumulative Abnormal Return* (CAR) pipelines with batched *Regression Discontinuity* (RD) analysis and ships a full notebook gallery for high‑impact visual communication.
 
-Designed for analysts who want journal‑quality statistics without sacrificing engineering rigour.
+> Designed for analysts who want **journal‑quality statistics** without sacrificing engineering rigour.
 
-🎞️ Quick Preview
+---
 
-Open the sample/ folder to instantly see what CRATES produces — PNG heatmaps, interactive HTML dashboards, and nicely‑formatted XLSX reports.
+## 🎞️ Quick Preview
 
-✨ Key Features
+Open the **`sample/`** folder to instantly see what **CRATES** produces — PNG heatmaps, interactive HTML dashboards, and nicely‑formatted XLSX reports.
 
-Full Stack – From raw OHLCV to Excel workbooks, high‑res figures, and interactive dashboards.
+---
 
-Multi‑asset – Crypto, equities, indices and commodities handled identically.
+## ✨ Key Features
 
-Modular – Nine CAR visual modules (V1‑9) plus three advanced (VA1‑3); separate RD tracks for price and volume.
+* **Full Stack** – From raw OHLCV to Excel workbooks, high‑res figures, and interactive dashboards.
+* **Multi‑asset** – Crypto, equities, indices and commodities handled identically.
+* **Modular** – Nine CAR visual modules (V1‑9) plus three advanced (VA1‑3); separate RD tracks for price and volume.
+* **Reproducible** – Version‑pinned environment, deterministic outputs, 100% tested core maths.
+* **Transparent** – Every cell is annotated; parameters surfaced via YAML for easy what‑if runs.
 
-Reproducible – Version‑pinned environment, deterministic outputs, 100% tested core maths.
+---
 
-Transparent – Every cell is annotated; parameters surfaced via YAML for easy what‑if runs.
+## 🗂️ Repository Layout
 
-🗂️ Repository Layout
-
+```
 crates/
 ├── benchmark/            # fixed benchmarks: Gold.csv, Nasdaq100.csv, SPY.csv
 ├── crypto_data/          # swappable crypto assets (same column schema)
@@ -41,69 +45,35 @@ crates/
 ├── requirements.txt
 ├── LICENSE               # CC BY‑NC‑SA 4.0
 └── README.md             # you are here
+```
 
-📦 Data Folders Explained
+---
 
-Folder
+### 📦 Data Folders Explained
 
-Initial State
+| Folder         | Initial State  | Purpose                                                               | Notes                                  |
+| -------------- | -------------- | --------------------------------------------------------------------- | -------------------------------------- |
+| `benchmark/`   | *(empty)*      | Place benchmark assets such as `Gold.csv`, `Nasdaq100.csv`, `SPY.csv` | Must follow **Bench CSV Format** below |
+| `crypto_data/` | *(empty)*      | Drop crypto (or equity) CSVs e.g. `Bitcoin.csv`, `BNB.csv`            | Same 7‑column schema                   |
+| `events/`      | *(empty)*      | Store `training_set.csv` & `test_set.csv` event calendars             | Two‑line multi‑column layout           |
+| `outcome/`     | Auto‑generated | Runtime artefacts: CAR tables, RD Excel, Plotly HTML                  | `.gitignore`d                          |
+| `sample/`      | Pre‑populated  | PNG, HTML, XLSX that illustrate expected outputs                      | For instant visual reference           |
 
-Purpose
+#### Bench / Crypto CSV Format
 
-Notes
-
-benchmark/
-
-(empty)
-
-Place benchmark assets such as Gold.csv, Nasdaq100.csv, SPY.csv
-
-Must follow Bench CSV Format below
-
-crypto_data/
-
-(empty)
-
-Drop crypto (or equity) CSVs e.g. Bitcoin.csv, BNB.csv
-
-Same 7‑column schema
-
-events/
-
-(empty)
-
-Store training_set.csv & test_set.csv event calendars
-
-Two‑line multi‑column layout
-
-outcome/
-
-Auto‑generated
-
-Runtime artefacts: CAR tables, RD Excel, Plotly HTML
-
-.gitignored
-
-sample/
-
-Pre‑populated
-
-PNG, HTML, XLSX that illustrate expected outputs
-
-For instant visual reference
-
-Bench / Crypto CSV Format
-
+```csv
 Date,Price,Open,High,Low,Vol.,Change %
 06/18/2025,3,411.00,3,405.20,3,418.90,3,389.05,85.86K,0.16%
 06/17/2025,3,405.62,3,404.20,3,422.70,3,384.40,4.16K,-0.34%
+```
 
-Why do the numbers contain commas?  The comma is a thousands separator widely used in financial terminals.  When loading with pandas, use pd.read_csv(path, thousands=',') to ensure values are parsed as numerics rather than strings.  The same option applies to both benchmark and crypto files.
-csv
-Date,Price,Open,High,Low,Vol.,Change %
-06/18/2025,3,411.00,3,405.20,3,418.90,3,389.05,85.86K,0.16%
-06/17/2025,3,405.62,3,404.20,3,422.70,3,384.40,4.16K,-0.34%
+> **Why do the numbers contain commas?**  The comma is a *thousands separator* widely used in financial terminals.  When loading with **pandas**, use `pd.read_csv(path, thousands=',')` to ensure values are parsed as numerics rather than strings.  The same option applies to both benchmark and crypto files.
+> csv
+> Date,Price,Open,High,Low,Vol.,Change %
+> 06/18/2025,3,411.00,3,405.20,3,418.90,3,389.05,85.86K,0.16%
+> 06/17/2025,3,405.62,3,404.20,3,422.70,3,384.40,4.16K,-0.34%
 
+````
 
 #### Events CSV Format
 ```csv
@@ -111,62 +81,38 @@ internal_good,internal_neutral,internal_bad,external_good,external_neutral,exter
 22/1/2021,18/4/2020,9/2/2021,3/11/2022,15/8/2022,9/2/2020
 ,1/7/2025,,,,7/12/2023
 ,,,,,26/6/2025
+````
 
-All dates are interpreted as DD/MM/YYYY; leave blank cells for non‑applicable categories.
+All dates are interpreted as **DD/MM/YYYY**; leave blank cells for non‑applicable categories.
 
---- | --- | --- | --- |
-| benchmark/ | Fixed | Gold.csv, Nasdaq100.csv, SPY.csv | Do not replace — referenced in notebooks & tests |
-| crypto_data/ | Flexible | Bitcoin.csv, BNB.csv, Dogecoin.csv, Ethereum.csv | May swap with any asset that follows the same column schema (see below) |
-| events/ | Editable | training_set.csv, test_set.csv | Update event dates here; notebooks read directly |
-| outcome/ | Auto | Runtime artefacts: CAR tables, RD Excel, Plotly HTML | Path is .gitignored by default |
-| sample/ | Reference | PNG figures illustrating expected outputs | Safe to prune if repo size matters |
+\--- | --- | --- | --- |
+\| `benchmark/` | **Fixed** | `Gold.csv`, `Nasdaq100.csv`, `SPY.csv` | Do **not** replace — referenced in notebooks & tests |
+\| `crypto_data/` | Flexible | `Bitcoin.csv`, `BNB.csv`, `Dogecoin.csv`, `Ethereum.csv` | May swap with any asset that follows the same column schema (see below) |
+\| `events/` | Editable | `training_set.csv`, `test_set.csv` | Update event dates here; notebooks read directly |
+\| `outcome/` | Auto | Runtime artefacts: CAR tables, RD Excel, Plotly HTML | Path is `.gitignore`d by default |
+\| `sample/` | Reference | PNG figures illustrating expected outputs | Safe to prune if repo size matters |
 
+---
 
+## 🛠️ Core Dependencies
 
-🛠️ Core Dependencies
+All required packages are declared in **`requirements.txt`** (auto‑generated via `pip‑compile`).  Key libraries:
 
-All required packages are declared in requirements.txt (auto‑generated via pip‑compile).  Key libraries:
+| Category                               | Package(s)                                | Notes                                     |
+| -------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| Data processing & scientific computing | `pandas`, `numpy`, `scipy`, `statsmodels` | Event‑study math + regressions            |
+| Visualisation                          | `matplotlib`, `seaborn`, `plotly`         | Static + interactive charts               |
+| Specialised charts                     | `waterfallcharts`                         | Waterfall diagnostics (V8‑9)              |
+| Excel export                           | `XlsxWriter`                              | High‑fidelity XLSX tables with formatting |
+| Notebook environment                   | `jupyterlab`                              | Recommended IDE (≥ 4.0)                   |
 
-Category
+You can inspect or modify version pins directly in `requirements.txt`.
 
-Package(s)
+---
 
-Notes
+## 🚀 Quick Start
 
-Data processing & scientific computing
-
-pandas, numpy, scipy, statsmodels
-
-Event‑study math + regressions
-
-Visualisation
-
-matplotlib, seaborn, plotly
-
-Static + interactive charts
-
-Specialised charts
-
-waterfallcharts
-
-Waterfall diagnostics (V8‑9)
-
-Excel export
-
-XlsxWriter
-
-High‑fidelity XLSX tables with formatting
-
-Notebook environment
-
-jupyterlab
-
-Recommended IDE (≥ 4.0)
-
-You can inspect or modify version pins directly in requirements.txt.
-
-🚀 Quick Start
-
+```bash
 # clone + env
 git clone https://github.com/DocAMYMEI/crates.git
 cd crates && python -m venv .venv && source .venv/bin/activate
@@ -176,23 +122,26 @@ pip install -r requirements.txt
 
 # run master notebook
 jupyter lab CAR_main.ipynb
+```
 
-Data required.  The notebooks assume you have already placed properly‑formatted CSVs into benchmark/ and crypto_data/, and populated events/ with the event calendars.We do not ship data nor auto‑fetch from public APIs.  Obtain prices from your licensed market data terminal (e.g. Bloomberg, Wind, Refinitiv) and ensure the schema matches the examples below before running any analysis.
+**Data required.**  The notebooks assume you have already placed properly‑formatted CSVs into `benchmark/` and `crypto_data/`, and populated `events/` with the event calendars.
+We do **not** ship data nor auto‑fetch from public APIs.  Obtain prices from your licensed market data terminal (e.g. Bloomberg, Wind, Refinitiv) and ensure the schema matches the examples below before running any analysis.
 bash
 
-clone + env
+# clone + env
 
-git clone https://github.com/DocAMYMEI/maest.git
+git clone [https://github.com/DocAMYMEI/maest.git](https://github.com/DocAMYMEI/maest.git)
 cd maest && python -m venv .venv && source .venv/bin/activate
 
-install deps
+# install deps
 
 pip install -r requirements.txt
 
-run master notebook
+# run master notebook
 
-jupyter lab CAR_main.ipynb
+jupyter lab CAR\_main.ipynb
 
+````
 
 .
 
@@ -237,64 +186,42 @@ Screenshots live in `sample/`.
   url    = {https://github.com/DocAMYMEI/crates},
   note   = {Version 1.0.0}
 }
+````
 
-⚖️ License & Disclaimer
+---
 
-Released under Creative Commons BY‑NC‑SA 4.0.Non‑commercial use only; no warranty expressed or implied.Market data remains property of original providers.
+## ⚖️ License & Disclaimer
 
-📈 Roadmap — Why It Matters
+Released under **Creative Commons BY‑NC‑SA 4.0**.
+Non‑commercial use only; no warranty expressed or implied.
+Market data remains property of original providers.
 
-Milestone
+---
 
-What
+## 📈 Roadmap — Why It Matters
 
-Why
+| Milestone           | What                                                                   | Why                                                             |
+| ------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------- |
+| **Fuzzy & RDD‑IV**  | Extend RD module to fuzzy boundaries and instrumental‑variable designs | Unlocks causal inference when treatment assignment is imperfect |
+| **Robust Variance** | Add heteroskedasticity‑consistent variance estimators (HC0‑HC3)        | Reliable t‑stats when residuals aren’t i.i.d.                   |
+| **Docker & Binder** | Provide reproducible container + one‑click cloud demo                  | Lowers onboarding friction for non‑Python users                 |
+| **CLI Wrapper**     | Headless batch execution via `caesar run --config events.yaml`         | Integrates into CI/CD or cron jobs                              |
+| **White‑paper**     | Submit methodological white‑paper to arXiv                             | Academic transparency & citability                              |
 
-Fuzzy & RDD‑IV
+---
 
-Extend RD module to fuzzy boundaries and instrumental‑variable designs
-
-Unlocks causal inference when treatment assignment is imperfect
-
-Robust Variance
-
-Add heteroskedasticity‑consistent variance estimators (HC0‑HC3)
-
-Reliable t‑stats when residuals aren’t i.i.d.
-
-Docker & Binder
-
-Provide reproducible container + one‑click cloud demo
-
-Lowers onboarding friction for non‑Python users
-
-CLI Wrapper
-
-Headless batch execution via caesar run --config events.yaml
-
-Integrates into CI/CD or cron jobs
-
-White‑paper
-
-Submit methodological white‑paper to arXiv
-
-Academic transparency & citability
-
-🤝 Contributing — How to Get Involved
+## 🤝 Contributing — How to Get Involved
 
 We welcome bug fixes, new features, and methodological critiques.
 
-Fork & branch.  Create a descriptive feature branch (feat/heteroskedasticity) from main.
+1. **Fork & branch.**  Create a descriptive feature branch (`feat/heteroskedasticity`) from `main`.
+2. **Write tests.**  Any new statistical routine should include a minimal, deterministic unit test under `tests/`.
+3. **Lint & format.**  Run `ruff --fix .` and `black .` before committing.
+4. **Document.**  Update docstrings and, if user‑facing, the README or notebook markdown.
+5. **Pull Request.**  Explain the rationale, cite any papers, and attach before/after plots when applicable.
 
-Write tests.  Any new statistical routine should include a minimal, deterministic unit test under tests/.
-
-Lint & format.  Run ruff --fix . and black . before committing.
-
-Document.  Update docstrings and, if user‑facing, the README or notebook markdown.
-
-Pull Request.  Explain the rationale, cite any papers, and attach before/after plots when applicable.
-
-First‑time contributor?  Look for issues tagged good‑first‑issue.
+> First‑time contributor?  Look for issues tagged **`good‑first‑issue`**.
 
 Commercial feature requests or bespoke consulting: please open a discussion so we can scope together.
 
+---
